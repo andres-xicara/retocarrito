@@ -119,10 +119,10 @@ if __name__ == '__main__':
         # SECUENCIA 1 - Llevar carrito a estación 2
         print("Avanza hasta llegar al carrito...")
         motor.motor_left_back(1, LB_forward, 40)
-        motor.motor_right_front(1, RF_forward, 40)
-        motor.motor_right_back(1, RB_forward, 40)
+        motor.motor_right_front(1, RF_forward, 30)
+        motor.motor_right_back(1, RB_forward, 30)
         motor.motor_left_front(1, LF_forward, 40)
-        time.sleep(10)  # Simula llegar al carrito
+        time.sleep(6)  # Simula llegar al carrito
 
         print("Frena...")
         motor.motor_stop()
@@ -133,10 +133,10 @@ if __name__ == '__main__':
 
         print("Avanza con el carrito hasta estación 2...")
         motor.motor_left_back(1, LB_forward, 40)
-        motor.motor_right_front(1, RF_forward, 40)
-        motor.motor_right_back(1, RB_forward, 40)
+        motor.motor_right_front(1, RF_forward, 30)
+        motor.motor_right_back(1, RB_forward, 30)
         motor.motor_left_front(1, LF_forward, 40)
-        time.sleep(10)  # Simula llegar a estación 2
+        time.sleep(6)  # Simula llegar a estación 2
 
         print("Frena...")
         motor.motor_stop()
@@ -147,13 +147,19 @@ if __name__ == '__main__':
 
         print("Avanza al final del Track 1...")
         motor.motor_left_back(1, LB_forward, 40)
-        motor.motor_right_front(1, RF_forward, 40)
-        motor.motor_right_back(1, RB_forward, 40)
+        motor.motor_right_front(1, RF_forward, 30)
+        motor.motor_right_back(1, RB_forward, 30)
         motor.motor_left_front(1, LF_forward, 40)
-        time.sleep(10)
+        time.sleep(6)
 
         motor.motor_stop()
-        time.sleep(1)
+        time.sleep(5)
+
+        motor.motor_left_front(1, LF_forward, 40)
+        motor.motor_left_back(1, LB_forward, 40)
+        motor.motor_right_front(1, RF_backward, 40)
+        motor.motor_right_back(1, RB_backward, 40)
+        time.sleep(5)
 
         print("Deteniendo motores...")
         motor.motor_stop()
