@@ -110,69 +110,107 @@ if __name__ == '__main__':
     motor = Motor()
     try:
         motor.motor_stop()
-        time.sleep(20)
-
-        print("Activando: motores recto")
-        motor.motor_left_back(1, LB_forward, 40)# M4
-        motor.motor_right_front(1, RF_forward, 40) # M2
-        motor.motor_right_back(1, RB_forward, 40) #M3
-        motor.motor_left_front(1, LF_forward, 40) #M1
         time.sleep(5)
+        # motor left back M4
+        # motor right front M2
+        # motor right back M3
+        # motor left front M1
 
-        print("Deteniendo motores....")
+        # SECUENCIA 1 - Llevar carrito a estación 2
+        print("Avanza hasta llegar al carrito...")
+        motor.motor_left_back(1, LB_forward, 40)
+        motor.motor_right_front(1, RF_forward, 40)
+        motor.motor_right_back(1, RB_forward, 40)
+        motor.motor_left_front(1, LF_forward, 40)
+        time.sleep(4)  # Simula llegar al carrito
+
+        print("Frena...")
         motor.motor_stop()
-        time.sleep(10)
+        time.sleep(1)
 
-        print("Activando : motores reversa")
-        motor.motor_left_back(1, LB_backward, 40)
-        motor.motor_right_front(1, RF_backward, 40)
-        motor.motor_right_back(1, RB_backward, 40)
+        print("Gancho ACTIVADO (simulado)")
+        time.sleep(1)
+
+        print("Avanza con el carrito hasta estación 2...")
+        motor.motor_left_back(1, LB_forward, 40)
+        motor.motor_right_front(1, RF_forward, 40)
+        motor.motor_right_back(1, RB_forward, 40)
+        motor.motor_left_front(1, LF_forward, 40)
+        time.sleep(4)  # Simula llegar a estación 2
+
+        print("Frena...")
+        motor.motor_stop()
+        time.sleep(1)
+
+        print("Gancho DESACTIVADO (simulado)")
+        time.sleep(1)
+
+        print("Avanza un poco para separarse del carrito...")
+        motor.motor_left_back(1, LB_forward, 40)
+        motor.motor_right_front(1, RF_forward, 40)
+        motor.motor_right_back(1, RB_forward, 40)
+        motor.motor_left_front(1, LF_forward, 40)
+        time.sleep(2)
+
+        motor.motor_stop()
+        time.sleep(1)
+
+
+
+
+        # GIRO 180 GRADOS (reverso de un lado y avance del otro)
+        print("Gira 180 grados...")
         motor.motor_left_front(1, LF_backward, 40)
-        time.sleep(5)
+        motor.motor_right_front(1, RF_forward, 40)
+        motor.motor_left_back(1, LB_backward, 40)
+        motor.motor_right_back(1, RB_forward, 40)
+        time.sleep(2.5)
+
+        motor.motor_stop()
+        time.sleep(1)
+
+
+
+
+
+        # SECUENCIA 2 - Llevar segundo carrito a estación 1
+        print("Avanza hasta llegar al segundo carrito...")
+        motor.motor_left_back(1, LB_forward, 40)
+        motor.motor_right_front(1, RF_forward, 40)
+        motor.motor_right_back(1, RB_forward, 40)
+        motor.motor_left_front(1, LF_forward, 40)
+        time.sleep(4)
+
+        print("Frena...")
+        motor.motor_stop()
+        time.sleep(1)
+
+        print("Gancho ACTIVADO (simulado)")
+        time.sleep(1)
+
+        print("Avanza con el carrito hasta estación 1...")
+        motor.motor_left_back(1, LB_forward, 40)
+        motor.motor_right_front(1, RF_forward, 40)
+        motor.motor_right_back(1, RB_forward, 40)
+        motor.motor_left_front(1, LF_forward, 40)
+        time.sleep(4)
+
+        print("Frena...")
+        motor.motor_stop()
+        time.sleep(1)
+
+        print("Gancho DESACTIVADO (simulado)")
+        time.sleep(1)
+
+        print("Avanza un poco para separarse del carrito...")
+        motor.motor_left_back(1, LB_forward, 40)
+        motor.motor_right_front(1, RF_forward, 40)
+        motor.motor_right_back(1, RB_forward, 40)
+        motor.motor_left_front(1, LF_forward, 40)
+        time.sleep(2)
 
         print("Deteniendo motores...")
         motor.motor_stop()
-        time.sleep(10)
 
-        print("Moviendo a la derecha")
-        motor.motor_left_front(1, LF_backward, 40)   # M1
-        motor.motor_right_front(1, RF_forward, 40)   # M2
-        motor.motor_left_back(1, LB_forward, 40)     # M3
-        motor.motor_right_back(1, RB_backward, 40)   # M4
-        time.sleep(5)
-
-        motor.motor_stop()
-        time.sleep(10)
-
-        print("Activando: motores recto")
-        motor.motor_left_back(1, LB_forward, 40)# M4
-        motor.motor_right_front(1, RF_forward, 40) # M2
-        motor.motor_right_back(1, RB_forward, 40) #M3
-        motor.motor_left_front(1, LF_forward, 40) #M1
-        time.sleep(5)
-
-        print("Deteniendo motores....")
-        motor.motor_stop()
-        time.sleep(10)
-
-        print("Activando : motores reversa")
-        motor.motor_left_back(1, LB_backward, 40)
-        motor.motor_right_front(1, RF_backward, 40)
-        motor.motor_right_back(1, RB_backward, 40)
-        motor.motor_left_front(1, LF_backward, 40)
-        time.sleep(5)
-
-        print("Deteniendo motores...")
-        motor.motor_stop()
-        time.sleep(10)
-
-        print("Moviendo a la izquierda")
-        motor.motor_left_front(1, LF_forward, 40)   # M1
-        motor.motor_right_front(1, RF_backward, 40)   # M2
-        motor.motor_left_back(1, LB_backward, 40)     # M3
-        motor.motor_right_back(1, RB_forward, 40)   # M4
-        time.sleep(5)
-
-        motor.motor_stop()
     except KeyboardInterrupt:
-        motor.motor_stop()
+        motor.motor_stop()    
