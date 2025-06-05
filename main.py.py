@@ -2,7 +2,7 @@ import time
 import board
 import digitalio
 import pwmio
-import digitalio
+
 import time
 from pwmio import PWMOut
 
